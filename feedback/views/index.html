@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>冠军历程</title>
+
+  <link rel="stylesheet" href="/public/lib/bootstrap/bootstrap.css">
+  <!-- 在服务器端请求的静态网站的地址，都是网站地址，区别于之前学习的专门写的文件地址 -->
+</head>
+
+<body>  
+  <div class="header container">
+    <div class="page-header">
+      <h1>老哥们的年度总结 <small>一起看看吧</small></h1>
+      <a class="btn btn-success" href="/yous">续写总结</a>
+    </div>
+  </div>
+  <div class="comments container">
+    <ul class="list-group">
+      {{each events}}
+      <li class="list-group-item">
+         <span class="pull-left text-primary">{{ $value.name }}在：</span>
+         <span class="col-md-offset-4 text-danger">{{ $value.date }}获得了</span> 
+         <span class="pull-right text-success">{{ $value.event }}</span>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+</html>

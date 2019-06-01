@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="node_modules/art-template/lib/template-web.js"></script>
+	<!-- 引入浏览器需要的模板引擎文件 -->
+
+	<script type="text/template-web" id="tp1">	
+		{{ name }} 是真的帅！
+		我是：{{ each goods }} {{ $value }} {{ /each }} 
+	</script>
+	<!-- 注意type的文件格式，不要被当成js文件解析 -->
+
+	<script>
+		var ret = template('tp1',{
+			name:'陈小帅',
+			goods:[
+			   '世界第一',
+			   '宇宙无敌',
+			   '的男人'
+			]
+
+			// 后面写分号会报错
+		})
+
+		console.log(ret)
+	</script>
+    <!-- 通过id引入对应模板，再将占位符替换掉 -->
+</body>
+</html>
